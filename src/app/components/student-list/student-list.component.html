@@ -1,0 +1,36 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Dni</th>
+            <th>Last Name</th>
+            <th>First Name</th>
+            <th>Email</th>
+        </tr>        
+    </thead>
+    <tbody>
+        <tr *ngFor="let student of studentList">
+            <td>{{ student.id }}</td>
+            <td>{{ student.dni }}</td>
+            <td>{{ student.lastName }}</td>
+            <td>{{ student.firstName }}</td>
+            <td>{{ student.email }}</td>
+            <td><button class="btn btn-success btn-sm">view</button></td>
+            <td><button class="btn btn-danger btn-sm" (click)="delete(student.id)">delete</button></td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td></td>
+            <td><input class="form-control" [(ngModel)]="dni"></td>
+            <td><input class="form-control" [(ngModel)]="lastName"></td>
+            <td><input class="form-control" [(ngModel)]="firstName"></td>
+            <td><input class="form-control" [(ngModel)]="email"></td>
+            <td scope='col'><button class="btn btn-labeled btn-success" (click)="save()">
+                <span class="btn-label"><i class="bi bi-plus-circle"></i></span>Agregar</button></td>
+        </tr>
+    </tfoot>
+</table>
+
+
+
